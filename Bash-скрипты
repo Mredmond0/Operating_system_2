@@ -7,3 +7,47 @@
 chmod +x script.sh 
 2. Запустить его: 
 ./script.sh 
+
+3. Базовые команды:
+echo - вывод текста на экран
+
+Объявление переменной и вывод её:
+my_var='Hello'   #ОЧЕНЬ важно писать все без пробелов
+echo $my_var - вывод значения переменной
+read name - команда, чтобы пользователь вводил имя с клавиатуры
+echo "Hello, $name!"
+
+Условные операторы:
+if [ "$my_var" = "Hello" ]; then 
+echo "The variable contains Hello" 
+else 
+echo "The variable does not contain Hello" 
+fi 
+
+Циклы:
+В bash есть и for, и while, и until.
+Пример скрипта на for:
+for i in {1..5}; do
+echo "Число: $i"
+done
+Пример скрипта на while  (пока не наелся, продолжай есть):
+hungry=true
+while [ "$hungry" = true ]; do
+echo "Ем..."
+read -p "Наелся? (да/нет): "
+answer (с клавиатуры)
+if [ "$answer" = "да" ]; then
+hungry=false
+fi
+done
+Пример скрипта на until  (до тех пор, пока не наелся, продолжатй есть):
+until [ "$hungry" = false ]; do
+echo "Ем..."
+read -p "Наелся? (да/нет): "
+answer (с клавиатуры)
+if [ "$answer" = "да" ]; then
+hungry=false
+fi
+done
+
+
